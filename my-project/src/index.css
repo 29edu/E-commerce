@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-* {
+body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -27,4 +27,8 @@ header .top-strip{
 
 .link:hover {
   color: #ff5252;
+}
+
+.MuiBadge-badge {
+  background-color: green !important;
 }
