@@ -5,6 +5,7 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  background-color: #D6CFC7 ;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 }
 
 .container{
-  width : 90%;
+  width : 95%;
   margin: auto;
 }
 

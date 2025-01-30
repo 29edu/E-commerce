@@ -1,0 +1,14 @@
+
+
+nav button {
+    text-transform: none;
+    color:black !important;
+}
+
+nav button:hover {
+    color:red !important;
+}
+
+nav ul button:hover {
+    background-color: none !important;
+}
