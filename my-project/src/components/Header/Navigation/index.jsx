@@ -9,10 +9,10 @@ import CategoryPanel from "./CategoryPanel";
 
 const Navigation = () => {
 
-    const [isOpenCatPanel, setIsOpenCatPanel] = useState()
+    const [isOpenCatPanel, setIsOpenCatPanel] = useState(false)
 
     const openCategoryPanel = () =>{
-        setInOpenCatPanel(true);
+        setIsOpenCatPanel(true);
     }
 
   return (
@@ -20,7 +20,7 @@ const Navigation = () => {
         <nav className="py-2">
       <div className="container flex items-center justify-end gap-9">
         <di className="col1 w-[15%] ">
-          <Button className="Nav !text-black gap-2 w-full" sx={{ textTransform: "none" }} onClick={openCategoryPanel}>
+          <Button className="Nav !text-black gap-2 w-full" sx={{ textTransform: "none" }} onClick={openCategoryPanel}>  
             <IoMenu className="menu-icon size-5" />
             Categories
             <FaAngleDown className="text-[14px] ml-auto font-bold" />
@@ -81,7 +81,7 @@ const Navigation = () => {
       </div>
     </nav>
 
-        <CategoryPanel openCategoryPanel={openCategoryPanel} isOpenCatPanel={isOpenCatPanel}/>
+        <CategoryPanel setIsOpenCatPanel={setIsOpenCatPanel} isOpenCatPanel={isOpenCatPanel}/>
     </>
   );
 };

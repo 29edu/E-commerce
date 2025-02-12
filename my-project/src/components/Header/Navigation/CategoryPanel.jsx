@@ -8,18 +8,26 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { useState } from "react";
-import {}
+import { useState, useEffect } from "react";
 
 const CategoryPanel = (props) => {
+  
+  // To check the state whether the drawer is opne or close
+  // useEffect(() => {
+  //   alert(props.isOpenCatPanel)
+  // },[])
+
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
+  
+    props.setIsOpenCatPanel(newOpen)
   };
 
+
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={props.openCategoryPanel(false)}>
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -46,7 +54,8 @@ const CategoryPanel = (props) => {
 
   return (
     <>
-      <Drawer open={props.isOpenCatPanel} onClose={props.openCategoryPanel(false)}>
+      {/* <Button onClick={toggleDrawer(true)} > Open Drawer</Button> */}
+      <Drawer open={props.isOpenCatPanel} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
     </>
